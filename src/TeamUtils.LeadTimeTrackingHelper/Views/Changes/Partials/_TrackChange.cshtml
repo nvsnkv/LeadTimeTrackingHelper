@@ -4,9 +4,9 @@
 
 <h2>Track one</h2>
 <form aps-controller="Changes" asp-action="Track">
-    <label asp-for="Activity"></label><span>:</span><input asp-for="Activity" /><br/>
-    <label asp-for="From"></label><span>:</span><input asp-for="From" /><br />
-    <label asp-for="To"></label><span>:</span><input asp-for="To" /><br />
-    <label asp-for="Timestamp"></label><span>:</span><input asp-for="Timestamp" /><br />
+    <label asp-for="Activity"></label><span>:</span><input asp-for="Activity" /><span asp-validation-for="Activity"></span><br/>
+    <label asp-for="From"></label><span>:</span><input asp-for="From" /><span asp-validation-for="From"></span><br />
+    <label asp-for="To"></label><span>:</span><input asp-for="To" /><span asp-validation-for="To"></span><br />
+    <label asp-for="Timestamp"></label><span>:</span><input asp-for="Timestamp" /><span asp-validation-for="Timestamp"></span><br />
     <input type="submit" value="Track"/>
 </form>
