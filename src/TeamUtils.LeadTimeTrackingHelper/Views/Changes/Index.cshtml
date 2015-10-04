@@ -1,11 +1,11 @@
 ﻿@using TeamUtils.LeadTimeTrackingHelper.Models
-@model IEnumerable<TrackChangeRequest>
+@model IEnumerable<ChangeModel>
 @{ 
     Layout = "_Layout";
 }
 <h1>Changes</h1>
 <div>
-    @Html.Partial("Partials/_TrackChange",new TrackChangeRequest())
+    @Html.Partial("Partials/_Change",new ChangeModel())
 </div>
 <div>
     <h2>Recent changes</h2>

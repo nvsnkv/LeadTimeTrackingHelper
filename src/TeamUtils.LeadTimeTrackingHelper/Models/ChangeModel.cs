@@ -7,7 +7,7 @@ using TeamUtils.LeadTimeTrackingHelper.Models.Validation;
 
 namespace TeamUtils.LeadTimeTrackingHelper.Models
 {
-    public class TrackChangeRequest
+    public class ChangeModel
     {
         [Required]
         public string Activity { get; set; }

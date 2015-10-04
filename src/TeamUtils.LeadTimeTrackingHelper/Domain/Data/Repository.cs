@@ -24,6 +24,11 @@ namespace TeamUtils.LeadTimeTrackingHelper.Domain.Data
             _context = context;
         }
 
+        public IEnumerable<Activity> GetActivities()
+        {
+            return _context.Activities;
+        }
+
         public Activity GetActivity(string key)
         {
             if (string.IsNullOrEmpty(key))
@@ -39,6 +44,22 @@ namespace TeamUtils.LeadTimeTrackingHelper.Domain.Data
 
             return result;
 
+        }
+
+        public void Remove(Activity activity)
+        {
+            if (activity == null)
+                throw new ArgumentNullException(nameof(activity));
+
+            var removingChanges = _context.Changes.Where(c => c.Activity.Key == activity.Key).ToList();
+
+            foreach(var change in removingChanges)
+            {
+                _context.Changes.Remove(change);
+            }
+
+            _context.Activities.Remove(activity);
+            _context.SaveChanges();
         }
 
         public State GetState(string key)

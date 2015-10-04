@@ -1,0 +1,29 @@
+﻿@using TeamUtils.LeadTimeTrackingHelper.Models
+@model IEnumerable<ActivityModel>
+@{
+    Layout = "_Layout";
+}
+
+<h1>Activities</h1>
+<div>
+    @Html.Partial("Partials/_Activity", new ActivityModel { IsNew = true })
+</div>
+<div>
+    <table>
+        <thead>
+            <tr>
+                <td>Activitity</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var item in Model)
+            {
+                <tr>
+                    <td>@item.Key</td>
+                    <td>@Html.Partial("Partials/_DeleteActivity", item)</td>
+                </tr>
+
+            }
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,9 @@
+﻿@addTagHelper "*, Microsoft.AspNet.Mvc.TagHelpers"
+@using TeamUtils.LeadTimeTrackingHelper.Models
+@model ActivityModel
+
+
+<form asp-controller="Activities" asp-action="Delete">
+    <input asp-for="Key" type="hidden" />
+    <input type="submit" value="Delete"/>
+</form>

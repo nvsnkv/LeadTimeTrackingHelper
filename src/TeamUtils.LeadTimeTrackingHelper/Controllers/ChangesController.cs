@@ -22,7 +22,7 @@ namespace TeamUtils.LeadTimeTrackingHelper.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            var requests = _tracker.GetRecentChanges().Select(x => new TrackChangeRequest
+            var requests = _tracker.GetRecentChanges().Select(x => new ChangeModel
             {
                 Activity = x.Activity.Key,
                 From = x.From.Key,
@@ -33,7 +33,7 @@ namespace TeamUtils.LeadTimeTrackingHelper.Controllers
         }
 
         [HttpPost]
-        public IActionResult Track(TrackChangeRequest request)
+        public IActionResult Track(ChangeModel request)
         {
             if (ModelState.IsValid)
             {

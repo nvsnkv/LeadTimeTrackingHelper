@@ -1,0 +1,19 @@
+﻿@addTagHelper "*, Microsoft.AspNet.Mvc.TagHelpers"
+@using TeamUtils.LeadTimeTrackingHelper.Models
+@model ActivityModel
+
+<h2>@(Model.IsNew ? "Add" : "Edit")</h2>
+
+<form asp-controller="Activities" asp-action="Add">
+    <input type="hidden" asp-for="IsNew" />
+    <label asp-for="Key"></label><span>:</span>
+    @if (Model.IsNew)
+    {
+        <input asp-for="Key"/><span asp-validation-for="Key"></span>
+    }
+    else
+    {
+        <input asp-for="Key" readonly="readonly"/>
+    }
+    <input type="submit" value="Submit"/>
+</form>
