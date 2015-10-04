@@ -1,0 +1,33 @@
+﻿@using TeamUtils.LeadTimeTrackingHelper.Models
+@model IEnumerable<TrackChangeRequest>
+@{ 
+    Layout = "_Layout";
+}
+<h1>Changes</h1>
+<div>
+    @Html.Partial("Partials/_TrackChange",new TrackChangeRequest())
+</div>
+<div>
+    <h2>Recent changes</h2>
+    <table>
+        <thead>
+            <tr>
+                <td>Activity</td>
+                <td>From</td>
+                <td>To</td>
+                <td>Timestamp</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var item in Model)
+            {
+                <tr>
+                    <td>@item.Activity</td>
+                    <td>@item.From</td>
+                    <td>@item.To</td>
+                    <td>@item.Timestamp</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

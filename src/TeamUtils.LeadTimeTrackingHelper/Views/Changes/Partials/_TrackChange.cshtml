@@ -1,0 +1,12 @@
+﻿@using TeamUtils.LeadTimeTrackingHelper.Models
+@model TrackChangeRequest
+@addTagHelper "*, Microsoft.AspNet.Mvc.TagHelpers"
+
+<h2>Track one</h2>
+<form aps-controller="Changes" asp-action="Track">
+    <label asp-for="Activity"></label><span>:</span><input asp-for="Activity" /><br/>
+    <label asp-for="From"></label><span>:</span><input asp-for="From" /><br />
+    <label asp-for="To"></label><span>:</span><input asp-for="To" /><br />
+    <label asp-for="Timestamp"></label><span>:</span><input asp-for="Timestamp" /><br />
+    <input type="submit" value="Track"/>
+</form>

@@ -18,6 +18,7 @@ namespace TeamUtils.LeadTimeTrackingHelper
 
         public void Configure(IApplicationBuilder app)
         {
+            app.UseErrorPage();
             app.UseMvc(routes =>
             {
                 routes.MapRoute("default", "{controller}/{action}",
