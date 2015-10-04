@@ -1,5 +1,7 @@
-﻿@{ 
+﻿@addTagHelper "*, Microsoft.AspNet.Mvc.TagHelpers"
+@{ 
     Layout = "_Layout";
 }
 
 <h1>Reports index page</h1>
+<a asp-controller="Changes" asp-action="Index">Recent changes</a>

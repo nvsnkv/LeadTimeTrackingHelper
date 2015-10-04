@@ -9,9 +9,14 @@ using Microsoft.Data.Entity.SqlServer.Metadata;
 namespace TeamUtils.LeadTimeTrackingHelper.Migrations
 {
     [DbContext(typeof(Repository.Context))]
-    partial class ContextModelSnapshot : ModelSnapshot
+    partial class Remove_Tags_From_Solution
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        public override string Id
+        {
+            get { return "20151004125722_Remove_Tags_From_Solution"; }
+        }
+
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .Annotation("ProductVersion", "7.0.0-beta7-15540")
