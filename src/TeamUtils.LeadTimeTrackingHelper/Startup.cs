@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNet.Builder;
-using Microsoft.AspNet.Http;
+﻿using Microsoft.AspNet.Builder;
 using Microsoft.Framework.DependencyInjection;
+using TeamUtils.LeadTimeTrackingHelper.Domain.Data;
+using Microsoft.Data.Entity;
 
 namespace TeamUtils.LeadTimeTrackingHelper
 {
@@ -13,6 +10,12 @@ namespace TeamUtils.LeadTimeTrackingHelper
         // For more information on how to configure your application, visit http://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            var connection = @"Server=.\SQLEXPRESS;Database=LeadTimeTracking;Trusted_Connection=True;";
+
+            services.AddEntityFramework()
+                .AddSqlServer()
+                .AddDbContext<Repository.Context>(options => options.UseSqlServer(connection));
+
             services.AddMvc();
         }
 
